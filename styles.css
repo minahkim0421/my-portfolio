@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: block;
+    background-color: #d9d9d9;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: grab;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    line-height: 3rem;
+    font-size: 3rem;
+}
+
+.nav {
+    padding: 10px;
+    background-color: #D9D9D9;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.spacer-small {
+    flex-grow: 0.2;
+}
+
+.nav-text {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* main page elements */
+
+.page-divider {
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* mobile introduction motion text elements */
+
+.intro-text {
+    margin: 1rem;
+    line-height: 1.5rem;
+    color: #D9D9D9;
+}
+
+.char {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.char.revealed {
+    opacity: 1;
+}
+
+
+
+#whiteboard {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    height: 40vh;
+    width: 100vw;
+    cursor: crosshair;
+    display: block;
+}
+
+.container {
+    display: grid;
+    margin-top: 10px;
+}
+
+.portfolio {
+    padding: 15px;
+    padding-bottom: 0;
+    display: flex;
+    height: 60vh;
+    width: 95vw;
+    gap: 10px;
+    /* position: sticky;
+    bottom: 0; */
+}
+
+.portfolio-link {
+    outline: 1px solid black;
+    background-color: white;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: scroll;
+    scrollbar-width: none; */
+}
+
+.portfolio-no-link {
+    outline: 1px solid black;
+    background-color: gray;
+    width: 6rem;
+}
+
+.portfolio-link:hover {
+    flex-grow: 1;
+    transition-duration: 0.4s;
+    /* animation-name: expandwide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; */
+}
+
+/* .dropdown-item {
+   height: auto;
+} */
+
+.dropdown {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+/* Large screens (> 1500px) - Original behavior */
+.dropdown-large img {
+    object-fit: contain;
+    z-index: 99;
+}
+
+.dropdown-medium.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* max-height: 20vh; */
+    z-index: 999;
+    /* background: rgba(0, 0, 0, 0.9); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+.dropdown-medium img {
+    object-fit: cover;
+    margin: 2rem;
+    max-width: 100%;
+}
+
+/* interview image size */
+#interview-beatriz .dropdown-medium.active {
+    top: -100px;
+}
+
+#interview-beatriz .dropdown-medium img {
+    object-fit: scale-down;
+    max-width: 200px;
+}
+
+/* Small screens (<= 1000px) - Always visible, inline */
+.dropdown-small {
+    display: block;
+}
+
+.dropdown-small img {
+    width: 10rem;
+    max-height: 400px;
+    object-fit: fill;
+}
+
+/* Ensure the dropdown doesn't interfere with other elements when not active */
+.dropdown:not(.active) {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+@keyframes expandwide {
+    from {
+        width: 6rem;
+    }
+
+    to {
+        width: 20rem;
+    }
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* index page style */
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    row-gap: 100px;
+    /* grid-auto-rows: 200px; */
+    margin: 5rem;
+}
+
+.index-grid-children {
+    align-self: center;
+    justify-self: center;
+    max-width: 20vw;
+    height: 30vh;
+}
+
+.index-grid-children img {
+    width: auto;
+    height: 100%;
+}
+
+/* thumbnail image popup event on hover */
+
+.thumbnail-image {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    max-height: 600px;
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* project page styles */
+
+.project-header {
+    /* max-height: 100vh; */
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-header>img {
+    max-width: 50vw;
+    max-height: 100vh;
+}
+
+.project-container {
+    background-color: white;
+    width: 100vw;
+    padding-top: 2rem;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto; */
+}
+
+.project-description {
+    /* padding-left: 10px; */
+    margin: 15px;
+    grid-row-start: 1;
+    grid-column: 1 / span 6;
+}
+
+/* 
+.project-image-child {
+    max-width: 50vw;
+    max-height: 100vh;
+} */
+
+.project-description-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+
+.project-title {
+    font-size: 24px;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.project-info {
+    grid-column: 3 / span 2;
+}
+
+.project-text {
+    grid-column: 3 / span 3;
+    padding-top: 20px;
+    margin-right: 30px;
+}
+
+.flipbook {
+    background-color: black;
+    grid-row: 3 / span 2;
+    grid-column: 1 / span 6;
+}
+
+/* test elements */
+.project-image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 500vh;
+    width: 100vw;
+    gap: 10px;
+}
+.image-children {
+    max-width: 50vw;
+}
+.image-children > img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+/* project grid end */
+
+.project-images {
+    max-width: 100vw;
+    background-color: black;
+    grid-row: 6 / span 2;
+    grid-column: 1 / span 6;
+}
+
+.project-image-grid {
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-grid>img {
+    max-width: 40vw;
+    max-height: 100vh;
+}
+
+
+/* project preview colors */
+#interview-beatriz:hover {
+    background: center / cover no-repeat url(assets/images/interview-beatriz.jpg);
+    background-color: hotpink;
+}
+
+#commencement-risd:hover {
+    background: center / cover no-repeat url(assets/images/commencement_risd.png);
+    background-color: skyblue;
+    color: white;
+}
+#noncolortext {
+    color: black;
+}
+
+#degree-project:hover {
+    background: center / cover no-repeat url(assets/images/degreeproject_thumb.jpg);
+    background-color: yellow;
+}
+
+
+/* breakpoints */
+@media only screen and (max-width: 1500px) {
+
+    .portfolio-link {
+        flex-direction: column;
+    }
+
+    .portfolio-link:hover {
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .index-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+     /* test styles */
+    .project-image-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .image-children {
+        grid-column: 1 / span 2;
+        max-width: 100vw;
+    }
+    .image-children > img {
+        height: auto;
+    }
+    /* test style end */
+}
+
+@media only screen and (max-width: 800px) {
+    .portfolio {
+        flex-direction: column;
+    }
+
+    marquee {
+        display: none;
+    }
+
+    @keyframes expandvertical {
+        from {
+            height: auto;
+        }
+
+        to {
+            height: 12vh;
+        }
+    }
+
+    .portfolio-link {
+        width: 95vw;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow-y: visible;
+        /* overflow-x: auto; */
+    }
+
+    .portfolio-link:hover {
+        rotate: 0deg;
+        width: 95vw;
+        margin-right: 20px;
+        /* animation: expandvertical;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards; */
+    }
+
+    .portfolio-no-link {
+        width: 95vw;
+    }
+
+    .dropdown-small {
+        padding: 1rem;
+    }
+
+    .dropdown-small img {
+        /* width: 100%;
+    height: auto; */
+        object-fit: scale-down;
+    }
+
+    .dropdown-small p {
+        display: none;
+    }
+
+    /* hiding page backgrounds */
+    #interview-beatriz:hover {
+        background: none;
+        background-color: hotpink;
+    }
+
+    #commencement-risd:hover {
+        background: none;
+        background-color: skyblue;
+    }
+
+    #degree-project:hover {
+        background: none;
+        background-color: yellowgreen;
+    }
+
+
+    /* index page styles */
+
+    .index-grid {
+        grid-template-columns: 1fr;
+        margin: 1rem;
+    }
+
+    .index-grid-children {
+        max-width: 300px;
+    }
+
+    /* project page styles */
+
+    h1 {
+        padding-bottom: 30px;
+    }
+
+    .project-description-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .project-title {
+        grid-column: 1 / span 6;
+        grid-row: 1 / span 1;
+    }
+
+    .project-info {
+        padding-top: 20px;
+        grid-column: 1 / span 2;
+    }
+
+    .project-text {
+        padding-top: 20px;
+        grid-column: 3 / span 4;
+    }
+
+    .project-images {
+        background-color: black;
+        grid-row: 3 / span 3;
+        height: auto;
+    }
+
+    .project-image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-image-grid>img {
+        max-width: 90vw;
+        max-height: 50vh;
+    }
+
+    .intro-text {
+        color: black;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    body {
+        background-color: white;
+    }
+
+    .nav {
+        background-color: white;
+    }
+
+    .portfolio-link {
+        outline: none;
+    }
+
+    .portfolio-link:active {
+        background-color: lightgray;
+    }
+
+    .nav-text {
+        font-size: 12px;
+    }
+
+    .intro-text {
+        font-size: 16px;
+        line-height: 1.5rem;
+        color: black;
+    }
+
+}

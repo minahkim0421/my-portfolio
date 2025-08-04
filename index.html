@@ -1,13 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minah Erin Kim</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
-    Hello World!
-    <br>
-    Check out my music video archive <a href="https://mvarchive.minaherinkim.com">here</a>
+    <div class="nav nav-text">
+        <a href="index.html"><img src="assets/icons/home-letters.svg" height="22px" style="margin-left: 5px; margin-right: 5px;"></a>
+        <div class="spacer" style="margin-right: 5px;">
+            <marquee>
+                Minah Erin Kim is a designer based in NY. She is a fresh graduate from RISD Graphic Design.
+            </marquee>
+        </div>
+        <div class="spacer-small"></div>
+        <a href="about/"><img src="assets/icons/about-icon.svg" height="22px" style="margin-right: 5px;"></a>
+        <!-- <div class="spacer-small"></div> -->
+        <a href="index/"><img src="assets/icons/index-icon.svg" height="22px" style="margin-right: 5px;"></a>
+    </div>
+
+    <div class="page-divider" id="mobile-intro">
+        <div class="nav-text">
+            <p id="intro" class="intro-text">Hello! I'm Minah. Thank you for visiting my space. I am a designer who likes to play with some languages, layouts, and interactions. Hope you have some fun here!&nbsp;P.S. My website might be more enjoyable in PC environments.
+            </p>
+        </div>
+        
+        <!-- <canvas id="whiteboard"></canvas> -->
+    </div>
+
+    <!-- the whole content container -->
+    <div class="container">
+
+        <!-- flexbox container -->
+        <div class="portfolio nav-text">
+
+            <!-- <div class="thumbnail-image" id="thumbnail-container">
+                <img id="thumbnail-img" src="" alt="Portfolio Thumbnail">
+            </div> -->
+
+            <a href="commencement-risd/" class="portfolio-link dropdown-item" id="commencement-risd">
+                <p> branding 2025 </p>
+                <div class="dropdown">
+                    <img src="assets/images/commencement_risd.png" style="width: 400px; height: 300px; z-index: 99;">
+                    <div>
+                    <p id="noncolortext">Collab project, RISD Design Guild</p>
+                </div>
+                </div>
+            </a>
+            <a href="the-interview/" class="portfolio-link dropdown-item" id="interview-beatriz">
+                <p> publication 2024 </p>
+                <div class="dropdown">
+                    <img src="assets/images/interview-beatriz.jpg" style="width: 300px; height: 500px; z-index: 99;">
+                    <div>
+                    <p>This was an interview spread designed based on Beatriz Lozano's work. Beatriz Lozano is a designer based in New York, currently working as a freelance designer. It is consisted of four pages of the interview, published by the Newspaper Club.</p>
+                </div>
+                </div>
+            </a>
+            <a href="on-cute/" class="portfolio-link dropdown-item" id="degree-project">
+                <p> branding 2025 </p>
+                <div class="dropdown">
+                    <img src="assets/images/degreeproject_thumb.jpg" style="width: 400px; height: 300px; z-index: 99;">
+                    <div>
+                    <p>RISD Degree Project, Multimedia including book publication and game making</p>
+                </div>
+                </div>
+            </a>
+            <a href="" class="portfolio-link">
+                <p> branding 2025 </p>
+            </a>
+            <a href="" class="portfolio-link">
+                <p> branding 2025 </p>
+            </a>
+            <!-- <a href="" class="portfolio-link">
+                <p> branding 2025 </p>
+            </a>
+            <a href="" class="portfolio-link">
+                <p> branding 2025 </p>
+            </a>
+            <a href="" class="portfolio-link">
+                <p> branding 2025 </p>
+            </a> -->
+            <a href="" class="portfolio-no-link">
+                <p> branding 2025 </p>
+            </a>
+            <a href="" class="portfolio-no-link">
+                <p> branding 2025 </p>
+            </a>
+            <div class="nav-text">
+                more to come...
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
