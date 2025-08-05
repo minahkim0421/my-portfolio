@@ -170,7 +170,7 @@ function checkWindowSize() {
         // Show and animate text on mobile
         if (element.innerHTML === '') {
             // Set original text first
-            element.innerHTML = "Hello! I'm Minah. Thank you for visiting my space. I am a designer who likes to play with some language, layouts, and interactions. Hope you have some fun here! P.S. My website might be more enjoyable in PC environments.";
+            element.innerHTML = "Hello! I'm Minah. Thank you for visiting my space. I am a designer who likes to play with some languages, layouts, and interactions. Hope you have some fun here! P.S. My website might be more enjoyable in PC environments.";
             // Then start animation
             setTimeout(() => startReveal(), 100);
         }

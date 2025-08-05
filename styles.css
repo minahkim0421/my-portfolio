@@ -175,6 +175,11 @@ h1 {
     max-width: 200px;
 }
 
+#senior-show .dropdown-medium.img {
+    object-fit: scale-down;
+    max-width: 300px;
+}
+
 /* Small screens (<= 1000px) - Always visible, inline */
 .dropdown-small {
     display: block;
@@ -323,7 +328,7 @@ h1 {
 .project-image-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-height: 500vh;
+    /* max-height: 500vh; */
     width: 100vw;
     gap: 10px;
 }
@@ -360,12 +365,13 @@ h1 {
 
 /* project preview colors */
 #interview-beatriz:hover {
-    background: center / cover no-repeat url(assets/images/interview-beatriz.jpg);
+    background: center / cover no-repeat url(assets/images/interview_flipbookgif.gif);
     background-color: hotpink;
+    color: white;
 }
 
 #commencement-risd:hover {
-    background: center / cover no-repeat url(assets/images/commencement_risd.png);
+    background: center / cover no-repeat url(assets/images/commencement_motion.gif);
     background-color: skyblue;
     color: white;
 }
@@ -376,6 +382,20 @@ h1 {
 #degree-project:hover {
     background: center / cover no-repeat url(assets/images/degreeproject_thumb.jpg);
     background-color: yellow;
+}
+#senior-show:hover {
+    background: center / cover no-repeat url(assets/images/seniorshow_poster1.jpg);
+    background-color: cornflowerblue;
+    color: white;
+}
+#gd-triennial:hover {
+    background: center / cover no-repeat url(assets/images/gdtriennial_thumb.jpg);
+    background-color: yellow;
+}
+#escape-your-reality:hover {
+    background: center / cover no-repeat url(assets/images/escape-your-reality-playroom.gif);
+    background-color: yellow;
+    color: white;
 }
 
 
@@ -389,6 +409,10 @@ h1 {
     .portfolio-link:hover {
         margin-right: 20px;
     }
+
+    .index-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -399,6 +423,7 @@ h1 {
 }
 
 @media only screen and (max-width: 1000px) {
+
      /* test styles */
     .project-image-container {
         display: grid;
