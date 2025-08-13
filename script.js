@@ -152,7 +152,7 @@ function revealTextByCharacter(elementId, delay = 100) {
 
 function startReveal() {
     // Only run animation if window width is under 800px
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 1200) {
         revealTextByCharacter('intro', 100);
     }
 }
@@ -166,7 +166,7 @@ function checkWindowSize() {
     const element = document.getElementById('intro');
     const windowWidth = getWindowWidth();
     
-    if (windowWidth < 800) {
+    if (windowWidth < 1200) {
         // Show and animate text on mobile
         if (element.innerHTML === '') {
             // Set original text first

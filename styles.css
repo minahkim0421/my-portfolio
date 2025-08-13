@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
-    margin: 0;
     display: block;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 a {
@@ -27,10 +27,12 @@ h1 {
 
 .nav {
     padding: 10px;
-    background-color: #D9D9D9;
+    background-color: whitesmoke;
+    background-blend-mode: multiply;
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
 .spacer {
@@ -57,6 +59,9 @@ h1 {
 }
 
 /* mobile introduction motion text elements */
+#mobile-intro {
+    display: none;
+}
 
 .intro-text {
     margin: 1rem;
@@ -91,12 +96,16 @@ h1 {
 }
 
 .portfolio {
-    padding: 15px;
+    background-color:#D9D9D9;
+    /* padding: 15px; */
+    margin-left: 5px;
+    margin-right: 5px;
     padding-bottom: 0;
     display: flex;
     height: 60vh;
-    width: 95vw;
+    width: 99vw;
     gap: 10px;
+    outline: 8px solid gray;
     /* position: sticky;
     bottom: 0; */
 }
@@ -118,8 +127,8 @@ h1 {
 }
 
 .portfolio-link:hover {
-    flex-grow: 1;
-    transition-duration: 0.4s;
+    flex-grow: 0.8;
+    transition-duration: 0.8s;
     /* animation-name: expandwide;
     animation-duration: 0.5s;
     animation-fill-mode: forwards; */
@@ -209,8 +218,10 @@ h1 {
 }
 
 .vertical-text {
+    padding-top: 5px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    
 }
 
 /* index page style */
@@ -258,7 +269,7 @@ h1 {
     border-radius: 8px;
 }
 
-/* project page styles */
+/* project page styles *//* project page styles */
 
 .project-header {
     /* max-height: 100vh; */
@@ -275,15 +286,27 @@ h1 {
 
 .project-container {
     background-color: white;
-    width: 100vw;
-    padding-top: 2rem;
+    max-width: 100vw;
     display: grid;
+    grid-template-columns: 1fr;
+    /* padding: 6rem; */
+    padding-top: 2rem;
     /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto; */
 }
 
+.project-new-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 3rem;
+    max-width: calc(100% - 6rem);
+    padding: 2rem 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
 .project-description {
-    /* padding-left: 10px; */
+    padding-left: 10px;
     margin: 15px;
     grid-row-start: 1;
     grid-column: 1 / span 6;
@@ -297,7 +320,7 @@ h1 {
 
 .project-description-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px;
 }
@@ -324,22 +347,40 @@ h1 {
     grid-column: 1 / span 6;
 }
 
+#project-spacer {
+    grid-row: 2 / span 1; 
+    grid-column: 1 / span 6; 
+    height: 5rem;
+}
+
 /* test elements */
 .project-image-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 2rem 2rem;
     /* max-height: 500vh; */
-    width: 100vw;
+    width: 100%;
     gap: 10px;
+    /* padding: 3rem;
+    padding-right: -10rem; */
 }
+
 .image-children {
     max-width: 50vw;
+    padding-right: 0;
 }
+
 .image-children > img {
     width: 100%;
-    height: 700px;
+    height: 500px;
     object-fit: cover;
 }
+.image-children > video {
+    width: calc(100vw - 240px);
+    height: auto;
+    object-fit: cover;
+}
+
 /* project grid end */
 
 .project-images {
@@ -375,6 +416,7 @@ h1 {
     background-color: skyblue;
     color: white;
 }
+
 #noncolortext {
     color: black;
 }
@@ -383,15 +425,18 @@ h1 {
     background: center / cover no-repeat url(assets/images/degreeproject_thumb.jpg);
     background-color: yellow;
 }
+
 #senior-show:hover {
     background: center / cover no-repeat url(assets/images/seniorshow_poster1.jpg);
     background-color: cornflowerblue;
     color: white;
 }
+
 #gd-triennial:hover {
     background: center / cover no-repeat url(assets/images/gdtriennial_thumb.jpg);
     background-color: yellow;
 }
+
 #escape-your-reality:hover {
     background: center / cover no-repeat url(assets/images/escape-your-reality-playroom.gif);
     background-color: yellow;
@@ -416,6 +461,7 @@ h1 {
 }
 
 @media only screen and (max-width: 1200px) {
+
     .index-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -423,26 +469,68 @@ h1 {
 }
 
 @media only screen and (max-width: 1000px) {
+    #mobile-intro {
+    display: block;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem;
+   }
+   .intro-text {
+    color: black;
+   }
 
-     /* test styles */
+   .index-grid {
+    gap: 5rem;
+   }
+   
+   .index-grid-children {
+    padding-right: 20px;
+    justify-self: center;
+    align-self: center;
+    text-wrap-mode: nowrap;
+   }
+   .index-grid-children img{
+    object-fit: fill;
+   }
+
+    /* test styles */
     .project-image-container {
         display: grid;
         grid-template-columns: 1fr;
         gap: 0;
     }
+
     .image-children {
         grid-column: 1 / span 2;
         max-width: 100vw;
     }
-    .image-children > img {
+
+    .image-children>img {
         height: auto;
     }
+
     /* test style end */
 }
 
 @media only screen and (max-width: 800px) {
+.container {
+    padding-bottom: 100px;
+}
+
+#mobile-intro {
+    padding: 15px;
+}
+ /* index library styles */
+.vertical-text {
+    writing-mode: horizontal-tb;
+   }
     .portfolio {
         flex-direction: column;
+        outline: none;
+        background-color: whitesmoke;
+    }
+    #index-page-divider {
+        height: 0;
     }
 
     marquee {
@@ -520,7 +608,7 @@ h1 {
     }
 
     .index-grid-children {
-        max-width: 300px;
+        max-width: 400px;
     }
 
     /* project page styles */
@@ -528,12 +616,21 @@ h1 {
     h1 {
         padding-bottom: 30px;
     }
+    .project-new-container {
+        max-width: 90vw;
+        margin: 0;
+        padding: 0;
+        padding-left: 2rem;
+        padding-top: 15px;
+    }
 
     .project-description-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
         gap: 10px;
+        padding-left: 10px;
+        /* padding-right: 10px; */
     }
 
     .project-title {
@@ -543,12 +640,16 @@ h1 {
 
     .project-info {
         padding-top: 20px;
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 6;
     }
 
     .project-text {
         padding-top: 20px;
-        grid-column: 3 / span 4;
+        grid-column: 1 / span 6;
+    }
+
+    #project-spacer {
+        height: 30px;
     }
 
     .project-images {
