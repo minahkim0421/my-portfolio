@@ -358,15 +358,12 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 2rem 2rem;
-    /* max-height: 500vh; */
     width: 100%;
     gap: 10px;
-    /* padding: 3rem;
-    padding-right: -10rem; */
 }
 
 .image-children {
-    max-width: 50vw;
+    /* max-width: 50vw; */
     padding-right: 0;
 }
 
@@ -376,7 +373,7 @@ h1 {
     object-fit: cover;
 }
 .image-children > video {
-    width: calc(100vw - 240px);
+    width: 100%;
     height: auto;
     object-fit: cover;
 }
@@ -484,10 +481,11 @@ h1 {
    }
    
    .index-grid-children {
-    padding-right: 20px;
+    max-width: 300px;
+    /* padding-right: 20px; */
     justify-self: center;
     align-self: center;
-    text-wrap-mode: nowrap;
+    /* text-wrap-mode: nowrap; */
    }
    .index-grid-children img{
     object-fit: fill;
