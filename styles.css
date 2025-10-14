@@ -25,6 +25,10 @@ h1 {
     font-size: 3rem;
 }
 
+caption {
+    padding-bottom: 15px;
+}
+
 .nav {
     padding: 10px;
     background-color: whitesmoke;
@@ -43,11 +47,25 @@ h1 {
     flex-grow: 0.2;
 }
 
+.spacer-fixed {
+    height: 10rem;
+}
+
 .nav-text {
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+.nav-text-small {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    opacity: 0.6;
+    padding-bottom: 20px;
 }
 
 /* main page elements */
@@ -96,7 +114,7 @@ h1 {
 }
 
 .portfolio {
-    background-color:#D9D9D9;
+    background-color: none;
     /* padding: 15px; */
     margin-left: 5px;
     margin-right: 5px;
@@ -105,7 +123,7 @@ h1 {
     height: 60vh;
     width: 99vw;
     gap: 10px;
-    outline: 8px solid gray;
+    outline: 8px solid none;
     /* position: sticky;
     bottom: 0; */
 }
@@ -129,6 +147,8 @@ h1 {
 .portfolio-link:hover {
     flex-grow: 0.8;
     transition-duration: 0.8s;
+    /* position: relative;
+    bottom: 30px; */
     /* animation-name: expandwide;
     animation-duration: 0.5s;
     animation-fill-mode: forwards; */
@@ -639,6 +659,7 @@ h1 {
     .project-info {
         padding-top: 20px;
         grid-column: 1 / span 6;
+        color: gray;
     }
 
     .project-text {
