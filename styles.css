@@ -171,9 +171,10 @@ caption {
 
 .portfolio-link:hover {
     flex-grow: 0.8;
-    transition-duration: 0.8s;
-    /* position: relative;
-    bottom: 30px; */
+    position: relative;
+    bottom: 30px;
+    transition-duration: 0.5s;
+    /* transition: all 1s ease; */
     /* animation-name: expandwide;
     animation-duration: 0.5s;
     animation-fill-mode: forwards; */
@@ -195,7 +196,7 @@ caption {
 /* Large screens (> 1500px) - Original behavior */
 .dropdown-large img {
     object-fit: contain;
-    z-index: 99;
+    /* z-index: 99; */
 }
 
 .dropdown-medium.active {
@@ -204,7 +205,7 @@ caption {
     left: 0;
     width: 100vw;
     /* max-height: 20vh; */
-    z-index: 999;
+    /* z-index: 999; */
     /* background: rgba(0, 0, 0, 0.9); */
     display: flex;
     justify-content: center;
