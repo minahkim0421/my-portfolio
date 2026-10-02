@@ -7,6 +7,8 @@
 body {
     height: 100vh;
     display: block;
+    margin-left: 2%;
+    margin-right: 2%;
     /* background-color: #d9d9d9; */
 }
 
@@ -82,7 +84,7 @@ caption {
 .happ-sans {
     font-family: "Happiness Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
 }
 
@@ -139,16 +141,14 @@ caption {
 }
 
 .portfolio {
-    background-color: none;
+    /* background-color: none; */
     /* padding: 15px; */
-    margin-left: 5px;
-    margin-right: 5px;
     padding-bottom: 0;
     display: flex;
     height: 60vh;
     width: 99vw;
     gap: 10px;
-    outline: 8px solid none;
+    /* outline: 8px solid none; */
     /* position: sticky;
     bottom: 0; */
 }
@@ -271,15 +271,19 @@ caption {
 }
 
 .index-grid-children {
-    align-self: center;
-    justify-self: center;
-    max-width: 20vw;
-    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: auto;
 }
 
 .index-grid-children img {
-    width: auto;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
 }
 
 /* thumbnail image popup event on hover */
@@ -345,29 +349,38 @@ caption {
 }
 
 .project-title {
-    font-size: 24px;
+    /* font-size: 24px; */
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
     padding: 10px;
+    line-height: 140%;
     /* border: 1px solid gray; */
 }
 
 .project-info {
     grid-column: 3 / span 3;
-     padding: 10px;
-     /* margin-right: 30px; */
+    grid-row: 1;
+    padding: 10px;
     margin-right: 2rem;
-    background-color: azure;
-    border: 1px solid yellowgreen;
+    /* background-color: azure;
+    border: 1px solid yellowgreen; */
+}
+
+.project-info-1 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    padding: 10px;
+    margin-right: 1rem;
 }
 
 .project-text {
     grid-column: 3 / span 3;
+    grid-row: 2;
     padding-top: 20px;
     margin-right: 2rem;
     padding: 10px;
-    background-color: azure;
-    border: 1px solid darkgreen;
+    /* background-color: azure;
+    border: 1px solid darkgreen; */
 }
 
 .flipbook {
@@ -542,6 +555,8 @@ caption {
    }
    .index-grid-children img{
     object-fit: fill;
+    width: auto;
+    height: 100%;
    }
 
     /* test styles */
@@ -584,15 +599,87 @@ caption {
 }
 
  /* index library styles */
-.vertical-text {
+/* .vertical-text {
     writing-mode: horizontal-tb;
    }
     .portfolio {
         flex-direction: column;
         outline: none;
         align-items: center;
-        background-color: whitesmoke;
+    } */
+
+    /* stack the items vertically */
+    .portfolio {
+        flex-direction: column;
+        height: auto;          /* the 60vh would squash a long list */
+        width: auto;
+        margin: 0 10px;
+        gap: 8px;
     }
+
+    /* each item becomes a horizontal row */
+    .portfolio-link {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    /* the hover-expand effect doesn't make sense in a list */
+    .portfolio-link:hover {
+        flex-grow: 0;
+        transition: none;
+    }
+
+    /* image and text side by side */
+    .portfolio-link .dropdown {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+        order: 1;
+        /* in case the desktop version hides or positions it: */
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+        height: auto;
+    }
+
+    /* the inline width/height on the images need !important to be overridden */
+    .portfolio-link .dropdown img {
+        width: 100px !important;
+        height: 100px !important;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    /* the rotated label becomes normal horizontal text at the end of the row */
+    .portfolio-link .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        order: 2;
+        width: 5rem;
+        flex-shrink: 0;
+        text-align: right;
+    }
+
+    .portfolio-no-link {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    /* the "more stories to come..." line */
+    .portfolio > .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        width: auto;
+    }
+
     #index-page-divider {
         height: 0;
     }
@@ -611,14 +698,14 @@ caption {
         }
     }
 
-    .portfolio-link {
+    /* .portfolio-link {
         width: 95vw;
         justify-content: center;
         align-items: center;
         gap: 20px;
         overflow-y: visible;
-        /* overflow-x: auto; */
-    }
+        overflow-x: auto;
+    } */
 
     /* .portfolio-link:hover {
         rotate: 0deg;
@@ -626,13 +713,13 @@ caption {
         margin-right: 20px;
     } */
 
-    .portfolio-no-link {
+    /* .portfolio-no-link {
         width: 95vw;
-    }
+    } */
 
-    .dropdown-small {
+    /* .dropdown-small {
         padding: 1rem;
-    }
+    } */
 
     .dropdown-small img {
         /* width: 100%;
@@ -650,10 +737,10 @@ caption {
         background-color: hotpink;
     }
 
-    #commencement-risd:hover {
+    /* #commencement-risd:hover {
         background: none;
         background-color: skyblue;
-    }
+    } */
 
     #degree-project:hover {
         background: none;
@@ -672,23 +759,30 @@ caption {
         max-width: 400px;
     }
 
+    .index-grid-children img{
+    object-fit: fill;
+    width: auto;
+    height: 100%;
+   }
+
     /* project page styles */
 
     h1 {
         padding-bottom: 30px;
     }
     .project-new-container {
-        max-width: 90vw;
+        max-width: 100vw;
         margin: 0;
-        padding: 0;
-        padding-left: 2rem;
+        /* padding: 0; */
+        padding-left: 1rem;
+        padding-right: 1rem;
         padding-top: 15px;
     }
 
     .project-description-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: auto; */
         gap: 10px;
         padding-left: 10px;
         /* padding-right: 10px; */
@@ -697,18 +791,19 @@ caption {
     .project-title {
         grid-column: 1 / span 6;
         grid-row: 1 / span 1;
-        padding-left: 0;
     }
 
     .project-info {
         padding-top: 20px;
         grid-column: 1 / span 6;
+        grid-row: 2 / span 1;
         color: gray;
     }
 
     .project-text {
         padding-top: 20px;
         grid-column: 1 / span 6;
+        grid-row: 3 / span 1;
     }
 
     #project-spacer {
@@ -757,7 +852,7 @@ caption {
     }
 
     .nav-text {
-        font-size: 12px;
+        font-size: 16px;
         margin: 0;
     }
 
@@ -768,12 +863,31 @@ caption {
     }
 
     .nav-text-small {
-        font-size: 10px;
+        font-size: 14px;
+    }
+    .project-description {
+        padding-left: 0;
+        margin: 0;
+    }
+    .project-description-grid {
+        padding-left: 0;
     }
     .project-new-container {
-        padding: 0;
         margin: 0;
         max-width: 100vw;
     }
+    .project-image-container {
+        padding: 0;
+    }
+
+    .index-grid-children img{
+    object-fit: fill;
+    width: auto;
+    height: 100%;
+   }
+   .vertical-text {
+    padding-top: 0;
+    padding-right: 10px;
+   }
 
 }
