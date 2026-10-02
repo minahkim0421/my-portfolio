@@ -281,9 +281,12 @@ caption {
 
 .index-grid-children img {
     max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* thumbnail image popup event on hover */
@@ -553,11 +556,11 @@ caption {
     align-self: center;
     /* text-wrap-mode: nowrap; */
    }
-   .index-grid-children img{
+   /* .index-grid-children img{
     object-fit: fill;
     width: auto;
     height: 100%;
-   }
+   } */
 
     /* test styles */
     .project-image-container {
@@ -759,11 +762,11 @@ caption {
         max-width: 400px;
     }
 
-    .index-grid-children img{
+    /* .index-grid-children img{
     object-fit: fill;
     width: auto;
     height: 100%;
-   }
+   } */
 
     /* project page styles */
 
@@ -880,11 +883,11 @@ caption {
         padding: 0;
     }
 
-    .index-grid-children img{
+    /* .index-grid-children img{
     object-fit: fill;
     width: auto;
     height: 100%;
-   }
+   } */
    .vertical-text {
     padding-top: 0;
     padding-right: 10px;
